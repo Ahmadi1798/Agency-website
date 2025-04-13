@@ -2,18 +2,17 @@ const Blog = () => {
   const blogs = [
     {
       id: 1,
-      title: 'Creating Streamlined Safeguarding Processes with OneRen',
+      title: 'How OneRen Simplified Client Communication with Automation',
       image: '/blogs/image1.jpg',
     },
     {
       id: 2,
-      title:
-        'What are your Safeguarding responsibilities and how can you manage them?',
+      title: 'Personalized Experiences: How We Helped a Fashion Brand Scale',
       image: '/blogs/image2.jpg',
     },
     {
       id: 3,
-      title: 'Creating Streamlined Safeguarding Processes with OneRen',
+      title: '	Building Efficient Processes That Save Time & Increase Trust',
       image: '/blogs/image3.jpg',
     },
   ];
@@ -21,13 +20,11 @@ const Blog = () => {
     <div className="px-4 lg:px-14 py-16 max-w-screen-2xl mx-auto">
       <div className="text-center mx-auto md:w-1/2" id="blog">
         <h2 className="text-4xl text-neutral-700 font-semibold mb-4">
-          Caring is the new Markinting
+          Caring Is the New Marketing
         </h2>
         <p className="text-sm text-secondary-text tracking-wide mb-8 md:w-3/4 mx-auto">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel officiis
-          commodi tempore itaque veritatis est cum et, blanditiis ipsum
-          voluptate cupiditate voluptas consequuntur aliquam mollitia nulla
-          eligendi eum eos aperiam.
+          Today’s most successful brands don’t just sell — they serve. Explore
+          how thoughtful digital strategies build lasting relationships.
         </p>
       </div>
       {/* Blog Posts */}

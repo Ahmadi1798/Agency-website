@@ -11,15 +11,14 @@ const About = () => {
           </div>
           <div className="md:w-3/5 mx-auto my-4 md:pl-5">
             <h2 className="font-semibold text-neutral-700 text-4xl mb-4 md:w-4/5">
-              The unseen of Spending three years at KarfamSoft
+              Engaging Users Through{' '}
+              <span className="text-accent-blue">Human-Centered</span> Digital
+              Design
             </h2>
             <p className="md:w-4/6 text-sm text-secondary-text mb-8 tracking-wide ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              efficitur venenatis justo non pulvinar. Curabitur maximus urna
-              vehicula mi accumsan ultricies. Nam ac nunc a purus pellentesque
-              commodo eu vel lorem. Fusce vehicula gravida mauris, id volutpat
-              ante pulvinar a. Mauris fringilla tempus nibh, in sodales ligula
-              mollis eget.
+              At <strong>KarFafSoft</strong>, we create intuitive and scalable
+              mobile-first solutions that resonate with real users. Whether it's
+              a landing page or a custom app, we make every tap and scroll count
             </p>
             <button className="primary-btn">Learn More</button>
           </div>
@@ -31,11 +30,12 @@ const About = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="md:w-1/2 pt-5">
               <h2 className="font-semibold text-neutral-700 text-4xl mb-2 md:w-2/3">
-                Helping a local <br />
-                <span className="text-blue-500">business reinvent itself</span>
+                Transforming Local Visions into <br />
+                <span className="text-accent-blue">Digital Reality</span>
               </h2>
               <p className=" text-base text-secondary-text mb-8 tracking-wide ">
-                we reached here with our hard work and dedication
+                Empowering small businesses through strategic design,
+                development, and scalable tech solutions
               </p>
             </div>
             {/* Stats */}
@@ -48,7 +48,7 @@ const About = () => {
                     <h4 className="text-2xl text-primary-text font-semibold">
                       1,234,541
                     </h4>
-                    <p className="text-base text-neutral-700">Members</p>
+                    <p className="text-xs text-neutral-700">Satisfied Users</p>
                   </div>
                 </div>
                 {/* 2nd stat */}
@@ -58,7 +58,9 @@ const About = () => {
                     <h4 className="text-2xl text-primary-text font-semibold">
                       821,756
                     </h4>
-                    <p className="text-base text-neutral-700">Event Booking</p>
+                    <p className="text-xs text-neutral-700">
+                      Community Projects Delivered
+                    </p>
                   </div>
                 </div>
               </div>
@@ -70,7 +72,9 @@ const About = () => {
                     <h4 className="text-2xl text-primary-text font-semibold">
                       541,341
                     </h4>
-                    <p className="text-base text-neutral-700">Clubs</p>
+                    <p className="text-xs text-neutral-700">
+                      Seamless Bookings Powered
+                    </p>
                   </div>
                 </div>
                 {/* 4th stat */}
@@ -80,7 +84,9 @@ const About = () => {
                     <h4 className="text-2xl text-primary-text font-semibold">
                       1,872,671
                     </h4>
-                    <p className="text-base text-neutral-700">Payments</p>
+                    <p className="text-xs text-neutral-700">
+                      Secure Transactions Processed
+                    </p>
                   </div>
                 </div>
               </div>

@@ -56,22 +56,25 @@ const Navbar = () => {
             {navItems.map(({ link, path }) => {
               return (
                 <Link
-                  className="block text-base text-primary-text hover:text-accent-blue cursor-pointer active:text-accent-blue"
+                  className="block text-base text-primary-text hover:text-accent-blue cursor-pointer"
                   to={path}
                   spy={true}
                   smooth={true}
                   offset={-100}
                   key={path}
                 >
-                  {link}
+                  <button className="focus:text-accent-blue cursor-pointer hover:border-b-2 hover:border-accent-blue transition duration-300">
+                    {' '}
+                    {link}
+                  </button>
                 </Link>
               );
             })}
           </ul>
-          <div className="hidden md:flex space-x-2">
+          <div className="hidden md:flex space-x-3">
             <a
               href="#"
-              className="text-base bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300"
+              className="text-base bg-accent-blue text-white px-6 py-2 rounded-md hover:bg-blue-800 transition duration-300"
             >
               Contact
             </a>
@@ -91,21 +94,25 @@ const Navbar = () => {
         </div>
         {/* nav Items for mobile menu */}
         <div
-          className={`md:hidden space-y-4 mt-16 py-7 px-2 text-primary bg-blue-500 ${
-            isMenuOpen ? 'block fixed top-0 left-0 right-0' : 'hidden'
+          className={`md:hidden space-y-4 mt-16 py-7 px-2 text-primary transition-all duration-500 bg-accent-blue/98 ${
+            isMenuOpen ? 'block fixed  top-0 left-0 right-0' : 'hidden'
           }`}
         >
           {navItems.map(({ link, path }) => {
             return (
               <Link
-                className="block text-base hover:text-primary-text text-primary cursor-pointer"
+                onClick={handleMenuToggle}
+                className="block text-base hover:opacity-80 text-primary cursor-pointer pl-3"
                 to={path}
                 spy={true}
                 smooth={true}
                 offset={-100}
                 key={path}
               >
-                {link}
+                <button className=" cursor-pointer hover:border-b-2 hover:border-white transition duration-300">
+                  {' '}
+                  {link}
+                </button>
               </Link>
             );
           })}
