@@ -14,7 +14,7 @@ const Portfolio = () => {
             <img src={loginImg} alt="" />
           </div>
           <div className="md:w-3/5 mx-auto my-4 md:pl-5">
-            <h2 className="font-semibold text-neutral-700 text-4xl mb-4 md:w-4/5">
+            <h2 className="font-semibold text-neutral-700 text-2xl md:text-4xl mb-4 md:w-4/5">
               Our Process: Designing With Purpose
             </h2>
             <p className="md:w-4/6 text-base text-secondary-text mb-8 tracking-wide ">

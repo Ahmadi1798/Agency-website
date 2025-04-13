@@ -10,7 +10,7 @@ const About = () => {
             <img src={about} alt="" />
           </div>
           <div className="md:w-3/5 mx-auto my-4 md:pl-5">
-            <h2 className="font-semibold text-neutral-700 text-4xl mb-4 md:w-4/5">
+            <h2 className="font-semibold text-neutral-700 text-2xl md:text-4xl mb-4 md:w-4/5">
               Engaging Users Through{' '}
               <span className="text-accent-blue">Human-Centered</span> Digital
               Design
@@ -29,7 +29,7 @@ const About = () => {
         <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto bg-primay py-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="md:w-1/2 pt-5">
-              <h2 className="font-semibold text-neutral-700 text-4xl mb-2 md:w-2/3">
+              <h2 className="font-semibold text-neutral-700 text-2xl md:text-4xl mb-2 md:w-2/3">
                 Transforming Local Visions into <br />
                 <span className="text-accent-blue">Digital Reality</span>
               </h2>

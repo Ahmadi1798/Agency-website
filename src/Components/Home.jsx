@@ -23,20 +23,20 @@ const Home = () => {
         <ThemeProvider theme={customTheme}>
           <Carousel className="w-full mx-auto">
             {/* Slide 1 */}
-            <div className="my-28 md:my-8 py-12 flex flex-col md:flex-row-reverse items-center justify-between gap-6">
+            <div className="my-10 md:my-8 flex flex-col md:flex-row-reverse items-center justify-between gap-6">
               <div>
                 {/* Illustration  */}
                 <img src={illustration} alt="website illustration" />
               </div>
               {/* content */}
               <div className="md:1/2 px-2">
-                <h1 className="text-2xl md:text-5xl font-semibold mb-4 text-primary-text md:w-3/4 leading-snug ">
+                <h1 className="text-2xl md:text-5xl font-semibold mb-2 text-primary-text md:w-3/4 leading-snug ">
                   Crafting Digital Experiences{' '}
                   <span className="text-accent-blue leading-snug">
                     That Drive Success
                   </span>
                 </h1>
-                <p className="text-base text-secondary-text mb-8 ">
+                <p className="text-sm md:text-base text-secondary-text mb-4  ">
                   We specialize in creating responsive, user-centric websites
                   that elevate your brand and engage your audience.
                 </p>
@@ -44,20 +44,20 @@ const Home = () => {
               </div>
             </div>
             {/* Slide 2 */}
-            <div className="my-28 md:my-8 py-12 flex flex-col md:flex-row-reverse items-center justify-between gap-10">
+            <div className="my-10 md:my-8  flex flex-col md:flex-row-reverse items-center justify-between gap-10">
               <div>
                 {/* Illustration  */}
                 <img src={illustration1} alt="website illustration" />
               </div>
               {/* content */}
               <div className="md:1/2 px-2">
-                <h1 className="text-2xl md:text-5xl  font-semibold mb-4 text-primary-text md:w-3/4 leading-snug capitalize">
+                <h1 className="text-2xl md:text-5xl  font-semibold mb-2 text-primary-text md:w-3/4 leading-snug capitalize">
                   Transforming Ideas into{' '}
                   <span className="text-accent-blue leading-snug">
                     Digital Reality
                   </span>
                 </h1>
-                <p className="text-base text-secondary-text mb-8 ">
+                <p className="text-sm md:text-base text-secondary-text mb-4 ">
                   Our team delivers cutting-edge web solutions tailored to your
                   business goals, ensuring a strong online presence.
                 </p>
