@@ -1,124 +1,126 @@
 import { useEffect, useState } from 'react';
 import logo from '../assets/Images/logo.png';
-import { Link } from 'react-scroll';
-import { X, Menu } from 'lucide-react';
-import { Moon, Sun } from 'lucide-react';
+import { X, Menu, Moon, Sun } from 'lucide-react';
+import { links } from '../../utils/Links';
+import { Link, NavLink } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
+  const isAboutPage = location.pathname === '/about';
+  const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [isLight, setIsLight] = useState(true);
 
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const toggleTheme = () => {
-    setIsLight(!isLight);
-  };
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
+  const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleScroll = () => setIsSticky(window.scrollY > 100);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { link: 'Home', path: 'home' },
-    { link: 'Services', path: 'services' },
-    { link: 'About', path: 'about' },
-    { link: 'Portfolio', path: 'portfolio' },
-    { link: 'Blog', path: 'blog' },
-  ];
-
   return (
-    <header className="w-full bg-white md:bg-transparent fixed top-0 left-0 right-0">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        isSticky
+          ? 'bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm'
+          : isAboutPage
+          ? 'bg-transparent dark:bg-transparent'
+          : 'bg-white dark:bg-gray-900'
+      }`} 
+    >
       <nav
-        className={`py-4 px-4 lg:px-14 ${
+        className={`transition-all duration-300 px-4 lg:px-14 py-4 ${
           isSticky
-            ? 'sticky top-0 right-0 left-0 border-b bg-white duration-300 '
+            ? 'sticky top-0 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm'
             : ''
         }`}
       >
-        <div className="flex justify-between items-center text-base gap-8">
-          <a href="#">
-            <img className="w-40" src={logo} alt="" />
-          </a>
+        <div className="max-w-screen-2xl mx-auto flex justify-between items-center gap-8">
+          {/* Logo */}
+          <Link to="/">
+            <img className="w-36" src={logo} alt="KarFamSoft Logo" />
+          </Link>
 
-          {/* Nav Items for md screen size  */}
-          <ul className="hidden md:flex space-x-12 items-center">
-            {navItems.map(({ link, path }) => {
-              return (
-                <Link
-                  className="block text-base text-primary-text hover:text-accent-blue cursor-pointer"
-                  to={path}
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  key={path}
-                >
-                  <button className="focus:text-accent-blue cursor-pointer hover:border-b-2 hover:border-accent-blue transition duration-300">
-                    {' '}
-                    {link}
-                  </button>
-                </Link>
-              );
-            })}
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex space-x-10 items-center text-sm font-medium">
+            {links.map(({ text, path }) => (
+              <NavLink
+                key={text}
+                to={path}
+                className={({ isActive }) =>
+                  `transition hover:text-indigo-600 ${
+                    isActive
+                      ? 'text-indigo-600'
+                      : 'text-gray-700 dark:text-gray-300'
+                  }`
+                }
+              >
+                {text}
+              </NavLink>
+            ))}
           </ul>
-          <div className="hidden md:flex space-x-3">
-            <a
-              href="#"
-              className="text-base bg-accent-blue text-white px-6 py-2 rounded-md hover:bg-blue-800 transition duration-300"
+
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to="/contact">
+              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-md text-sm transition">
+                Contact
+              </button>
+            </Link>
+            <button
+              onClick={toggleTheme}
+              className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
             >
-              Contact
-            </a>
-            <button onClick={toggleTheme} className="cursor-pointer">
-              {isLight ? <Sun /> : <Moon />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
-          {/* menu for Mobile Screen Size */}
+
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button
               onClick={handleMenuToggle}
-              className="text-primary-text focus:outline-none focus:outline-border-color"
+              className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
             >
               {isMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
-        {/* nav Items for mobile menu */}
+
+        {/* Mobile Navigation */}
         <div
-          className={`md:hidden space-y-4 mt-16 py-7 px-2 text-primary transition-all duration-500 bg-accent-blue/98 ${
-            isMenuOpen ? 'block fixed  top-0 left-0 right-0' : 'hidden'
+          className={`md:hidden transition-all duration-500 px-4 pt-6 pb-4 space-y-4 bg-white dark:bg-gray-900 ${
+            isMenuOpen ? 'block' : 'hidden'
           }`}
         >
-          {navItems.map(({ link, path }) => {
-            return (
-              <Link
-                onClick={handleMenuToggle}
-                className="block text-base hover:opacity-80 text-primary cursor-pointer pl-3"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                key={path}
-              >
-                <button className=" cursor-pointer hover:border-b-2 hover:border-white transition duration-300">
-                  {' '}
-                  {link}
-                </button>
-              </Link>
-            );
-          })}
+          {links.map(({ text, path }) => (
+            <NavLink
+              key={text}
+              to={path}
+              onClick={handleMenuToggle}
+              className={({ isActive }) =>
+                `block text-sm font-medium ${
+                  isActive
+                    ? 'text-indigo-600'
+                    : 'text-gray-700 dark:text-gray-300'
+                }`
+              }
+            >
+              {text}
+            </NavLink>
+          ))}
+          <Link to="/contact">
+            <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md text-sm mt-4">
+              Contact
+            </button>
+          </Link>
         </div>
       </nav>
     </header>
   );
 };
+
 export default Navbar;

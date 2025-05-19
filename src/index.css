@@ -8,6 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+
 @theme {
   --color-primary: #FAFAFA;
   --color-secondary: #FFFFFF;
@@ -22,6 +23,9 @@ header {
   z-index: 10001 !important;
 }
 
+
 .primary-btn {
   @apply px-4 md:px-6 py-2 text-primary-text text-xs md:text-base bg-transparent ring-2 ring-accent-blue hover:text-primary hover:bg-blue-500 hover:ring-0 rounded-md transition-all duration-300;
 }
+
+@custom-variant dark (&:where(.dark, .dark *), .dark)
