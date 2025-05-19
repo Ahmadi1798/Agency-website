@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '../assets/Images/logo.png';
+
 import { X, Menu, Moon, Sun } from 'lucide-react';
 import { links } from '../../utils/Links';
 import { Link, NavLink } from 'react-router-dom';
@@ -30,7 +30,7 @@ const Navbar = () => {
           : isAboutPage
           ? 'bg-transparent dark:bg-transparent'
           : 'bg-white dark:bg-gray-900'
-      }`} 
+      }`}
     >
       <nav
         className={`transition-all duration-300 px-4 lg:px-14 py-4 ${
@@ -42,7 +42,11 @@ const Navbar = () => {
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
           <Link to="/">
-            <img className="w-36" src={logo} alt="KarFamSoft Logo" />
+            <img
+              className="w-36"
+              src="/images/logo.png"
+              alt="KarFamSoft Logo"
+            />
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,4 @@
-import heroImage from '../../assets/Illustrations/website1.svg'; // Replace with your own
+// Replace with your own
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -40,7 +40,7 @@ const HeroSection = () => {
         {/* Right Illustration */}
         <div className="flex justify-center">
           <motion.img
-            src={heroImage}
+            src="/images/heroImage.png"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}

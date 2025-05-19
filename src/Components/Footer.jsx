@@ -1,4 +1,3 @@
-import logo from '../assets/Images/logo.png';
 import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 
@@ -19,7 +18,11 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <a href="#" className="mb-6 lg:mb-0">
-            <img className="w-36" src={logo} alt="KarFamSoft Logo" />
+            <img
+              className="w-36"
+              src="/images/logo.png"
+              alt="KarFamSoft Logo"
+            />
           </a>
           <ul className="flex gap-5">
             <li>
